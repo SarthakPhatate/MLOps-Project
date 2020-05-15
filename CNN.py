@@ -7,7 +7,7 @@ from keras.layers import Conv2D,MaxPooling2D
 
 categories = ["Dog","Cat"]
 label = [0,1]
-size = 50
+size = 52
 
 training_data =list()
 training_imgs = list()
