@@ -63,3 +63,6 @@ history = model.fit(X,y,batch_size=4,epochs=1,validation_split=0.3,verbose=2)
 model.save("CNN.model")
 
 print(history.history['accuracy'])
+f = open("accuracy.txt",'w')
+f.write(history.history['accuracy'][0])
+f.close()
