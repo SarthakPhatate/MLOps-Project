@@ -64,5 +64,5 @@ model.save("CNN.model")
 
 print(history.history['accuracy'])
 f = open("accuracy.txt",'w')
-f.write(history.history['accuracy'][0])
+f.write('%d' % int(history.history['accuracy'][0])) 
 f.close()
