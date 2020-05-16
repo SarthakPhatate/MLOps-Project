@@ -7,7 +7,7 @@ from keras.layers import Conv2D,MaxPooling2D
 
 categories = ["Dog","Cat"]
 label = [0,1]
-size = 50
+size = 51
 
 epo = 3
 ker = 3
