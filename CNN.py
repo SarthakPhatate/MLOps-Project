@@ -62,7 +62,9 @@ history = model.fit(X,y,batch_size=4,epochs=1,validation_split=0.3,verbose=2)
 
 model.save("CNN.model")
 
-print(history.history['accuracy'])
+print(history.history['accuracy']*100)
 f = open("accuracy.txt",'w')
-f.write('%d' % int(history.history['accuracy'][0])) 
+f.write('%d' % int(history.history['accuracy'][0] * 100))
 f.close()
+
+
