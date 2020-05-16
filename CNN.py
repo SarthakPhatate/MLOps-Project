@@ -9,8 +9,8 @@ categories = ["Dog","Cat"]
 label = [0,1]
 size = 50
 
-epo = 3
-ker = 3
+epo = 8
+ker = 5
 
 training_data =list()
 training_imgs = list()
