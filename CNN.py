@@ -9,6 +9,9 @@ categories = ["Dog","Cat"]
 label = [0,1]
 size = 50
 
+epo = 3
+ker = 3
+
 training_data =list()
 training_imgs = list()
 training_labels = list()
@@ -37,19 +40,19 @@ y=training_labels
 
 model= Sequential()
 
-model.add(Conv2D(32,(3,3),input_shape=X.shape[1:]))
+model.add(Conv2D(32,(ker,ker),input_shape=X.shape[1:]))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.25))
 
-model.add(Conv2D(64,(3,3)))
+model.add(Conv2D(64,(ker,ker)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.25))
 
 model.add(Flatten())
-model.add(Dense(256))
 
+model.add(Dense(256))
 model.add(Dense(128))
 model.add(Dense(64))
 
@@ -58,13 +61,11 @@ model.add(Activation('sigmoid'))
 
 model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 
-history = model.fit(X,y,batch_size=4,epochs=1,validation_split=0.3,verbose=2)
+history = model.fit(X,y,batch_size=4,epochs=epo,validation_split=0.3,verbose=1)
 
 model.save("CNN.model")
 
-print(history.history['accuracy']*100)
+print(history.history['accuracy'][0] * 100)
 f = open("accuracy.txt",'w')
 f.write('%d' % int(history.history['accuracy'][0] * 100))
 f.close()
-
-
