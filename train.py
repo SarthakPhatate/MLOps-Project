@@ -15,7 +15,7 @@ ker = 5
 training_data =list()
 training_imgs = list()
 training_labels = list()
-count=0
+count = 0
 
 for cate,lab in zip(categories,label):
     for i in range(0,12500):
