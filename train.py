@@ -10,7 +10,7 @@ label = [0,1]
 size = 51
 
 epo = 3
-ker = 5
+ker = 3
 
 training_data =list()
 training_imgs = list()
@@ -50,6 +50,11 @@ model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.25))
 
+model.add(Conv2D(128,(ker,ker)))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Dropout(0.25))
+model.add(Dense(128))
 model.add(Flatten())
 
 model.add(Dense(256))
