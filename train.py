@@ -7,15 +7,15 @@ from keras.layers import Conv2D,MaxPooling2D
 
 categories = ["Dog","Cat"]
 label = [0,1]
-size = 51
+size = 50
 
-epo = 3
-ker = 3
+epo = 5
+ker = 5
 
 training_data =list()
 training_imgs = list()
 training_labels = list()
-count = 0
+count=0
 
 for cate,lab in zip(categories,label):
     for i in range(0,12500):
@@ -50,11 +50,6 @@ model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2,2)))
 model.add(Dropout(0.25))
 
-model.add(Conv2D(128,(ker,ker)))
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2,2)))
-model.add(Dropout(0.25))
-model.add(Dense(128))
 model.add(Flatten())
 
 model.add(Dense(256))
